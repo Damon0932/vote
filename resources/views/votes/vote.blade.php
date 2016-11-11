@@ -32,7 +32,7 @@
         <div class="word">
             <div>
                 You have rated
-                <b>{{ vote_count }}</b>
+                <b>@{{ vote_count }}</b>
                 <b>/</b>
                 <b>10</b> styles.
             </div>
