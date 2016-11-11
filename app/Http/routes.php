@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'VoteController@index');
-Route::get('/vote', 'VoteController@vote');
+Route::get('/vote', 'VoteController@votePage');
+Route::post('/vote', 'VoteController@vote');
 
 Route::auth();
