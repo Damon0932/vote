@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vote</title>
     <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
-    <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/vendor/swiper-3.3.0.min.css">
-    <link rel="stylesheet" href="/css/vendor/buttons.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-3.3.0.min.css">
+    <link rel="stylesheet" href="css/vendor/buttons.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -122,11 +122,11 @@
         <p>2016 Copyright © 123@123 Co. Ltd. All Rights Reserved.</p>
     </div>
 </div>
-<script src="/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
-<script src="/js/vendor/swiper-3.3.0.min.js"></script>
-<script src="/js/vendor/vue.js"></script>
-<script src="/js/vote.js"></script>
+<script src="js/vendor/jquery-2.1.4.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/swiper-3.3.0.min.js"></script>
+<script src="js/vendor/vue.js"></script>
+<script src="js/vote.js"></script>
 </body>
 
 </html>
