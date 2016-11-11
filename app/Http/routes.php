@@ -13,3 +13,5 @@
 
 Route::get('/', 'VoteController@index');
 Route::get('/vote', 'VoteController@vote');
+
+Route::auth();
