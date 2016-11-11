@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -16,7 +17,9 @@ class VoteController extends Controller
      */
     public function index()
     {
-        return view('vote.index');
+        return view('votes.index', [
+            'products' => Product::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class VoteController extends Controller
      */
     public function vote(Request $request)
     {
-        return view('vote.vote');
+        return view('votes.vote');
     }
 
 
