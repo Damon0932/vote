@@ -17,9 +17,7 @@ class VoteController extends Controller
      */
     public function index()
     {
-        return view('votes.index', [
-            'products' => Product::all()
-        ]);
+        return view('votes.index');
     }
 
     /**
@@ -29,6 +27,4 @@ class VoteController extends Controller
     {
         return view('votes.vote');
     }
-
-
 }
