@@ -41,7 +41,7 @@ class VoteController extends Controller
             $data = [
                 'product_id' => $dataArray[0],
                 'answer' => $dataArray[1],
-                'comment' => $dataArray[3],
+                'comment' => $dataArray[2],
                 'email' => $email
             ];
             Vote::create($data);
