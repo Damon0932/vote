@@ -60,16 +60,16 @@
                         </span>
                 </h2>
                 <p>Please fill in your email and start voting.</p>
-                <form action="####" method="post" id="index_form">
+                <form action="#" @submit.prevent="submit_vote" method="post" id="index_form">
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
                         <span class="input-group-addon">
                             <i class="fa fa-envelope"></i>
                         </span>
-                    <input required type="email" name="email" placeholder="" id="email" class="form-control" title="Please enter your email address.">
+                    <input required type="email" v-model="email" name="email" placeholder="email@example.com" id="email" class="form-control" title="Please enter your email address.">
                 </div>
                 <br>
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <button id="submit_button" href="vote.html" type="submit" class="button button-uppercase button-caution col-xs-12">vote now</button>
+                    <button id="submit_button" type="submit" class="button button-uppercase button-caution col-xs-12">vote now</button>
                 </div>
                 </form>
             </div>
@@ -105,9 +105,23 @@
 </div>
 <script src="js/vendor/jquery-2.1.4.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/vendor/swiper-3.3.0.min.js"></script>
+{{-- <script src="js/vendor/swiper-3.3.0.min.js"></script> --}}
 <script src="js/vendor/vue.js"></script>
 <script>
+new Vue({
+    el: 'body',
+    data: {
+        email: '',
+    },
+    methods: {
+        submit_vote: function(){
+            window.location.href='/vote?email='+this.email;
+        }
+    }
+});
+
+
+
     $('#vote_button').click(function(event) {
         $('#submit_button').click();
     });
