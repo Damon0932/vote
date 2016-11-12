@@ -34,15 +34,15 @@
                 You have rated
                 <b>@{{ vote_count }}</b>
                 <b>/</b>
-                <b>10</b> styles.
+                <b>@{{ vote.length }}</b> styles.
             </div>
         </div>
-        <button class="button button-caution button-uppercase">submit</button>
+        <button type="button"  @click='submit_vote' class="button button-caution button-uppercase" id='submit_vote'>submit</button>
     </div>
 </div>
 <div class="container" style="min-height: 800px;">
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#">Vote</a></li>
     </ol>
     <div class="col-lg-12 light-block text-center">
@@ -59,33 +59,25 @@
 
                 <div class="caption">
                     <p>
-                        <span>Question:</span> Would you buy this style at <b class="red-sunlgo">$18</b>?
+                        <span>Question:</span>@{{{ item.question }}}
                     </p>
 
                     <p>
                             <span>Answer: <span class="text-danger">*</span>
                             <span class="star">
-                                    <i class="fa fa-star" :class=" item.value >= 1 ? 'choose':''" @click="star($index,1)"></i>
-                                <i class="fa fa-star" :class=" item.value >= 2 ? 'choose':''" @click
-                                ="star($index,2)"></i>
-                                <i class="fa fa-star" :class=" item.value >= 3 ? 'choose':''" @click
-                                ="star($index,3)"></i>
-                                <i class="fa fa-star" :class=" item.value >= 4 ? 'choose':''" @click
-                                ="star($index,4)"></i>
-                                <i class="fa fa-star" :class=" item.value >= 5 ? 'choose':''" @click
-                                ="star($index,5)"></i>
+                                <i class="fa fa-star" :class=" item.answer >= 1 ? 'choose':''" @click="star($index,1)"></i><i class="fa fa-star" :class=" item.answer >= 2 ? 'choose':''" @click="star($index,2)"></i><i class="fa fa-star" :class=" item.answer >= 3 ? 'choose':''" @click="star($index,3)"></i><i class="fa fa-star" :class=" item.answer >= 4 ? 'choose':''" @click="star($index,4)"></i><i class="fa fa-star" :class=" item.answer >= 5 ? 'choose':''" @click="star($index,5)"></i>
                             </span>
-                            <span v-show="item.value == 0" class="label label-default">Not Rated</span>
-                            <span v-show="item.value == 1" class="label label-danger">Very Unlikely</span>
-                            <span v-show="item.value == 2" class="label label-warning">Unlikely</span>
-                            <span v-show="item.value == 3" class="label label-info">Maybe</span>
-                            <span v-show="item.value == 4" class="label label-primary">Likely</span>
-                            <span v-show="item.value == 5" class="label label-success">Very Likely</span>
+                            <span v-show="item.answer == 0" class="label label-default">Not Rated</span>
+                            <span v-show="item.answer == 1" class="label label-danger">Very Unlikely</span>
+                            <span v-show="item.answer == 2" class="label label-warning">Unlikely</span>
+                            <span v-show="item.answer == 3" class="label label-info">Maybe</span>
+                            <span v-show="item.answer == 4" class="label label-primary">Likely</span>
+                            <span v-show="item.answer == 5" class="label label-success">Very Likely</span>
                             </span>
                     </p>
 
                     <div class="form-group" style="margin-top: 10px;">
-                        <textarea rows="2" class="form-control" placeholder="Leave a comment. (Optional)"></textarea>
+                        <textarea rows="2" class="form-control" placeholder="Leave a comment. (Optional)" v-model="item.comment"></textarea>
                     </div>
                 </div>
             </div>

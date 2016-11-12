@@ -44,7 +44,7 @@
                 <div class="col-xs-0 col-md-1"></div>
                 <button class="button button-uppercase button-border col-md-4 col-xs-5">q &amp; a</button>
                 <div class="col-xs-2"></div>
-                <a href="vote.html" class="button button-uppercase button-caution col-md-4 col-xs-5">vote now</a>
+                <button type="button" id='vote_button' class="button button-uppercase button-caution col-md-4 col-xs-5">vote now</button>
             </div>
         </div>
     </div>
@@ -60,16 +60,18 @@
                         </span>
                 </h2>
                 <p>Please fill in your email and start voting.</p>
+                <form action="####" method="post" id="index_form">
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
                         <span class="input-group-addon">
                             <i class="fa fa-envelope"></i>
                         </span>
-                    <input type="text" name="enterEmailAddress" placeholder="" id="enterEmailAddress" class="form-control" title="Please enter your email address.">
+                    <input required type="email" name="email" placeholder="" id="email" class="form-control" title="Please enter your email address.">
                 </div>
                 <br>
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                    <a href="vote.html" class="button button-uppercase button-caution col-xs-12">vote now</a>
+                    <button id="submit_button" href="vote.html" type="submit" class="button button-uppercase button-caution col-xs-12">vote now</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -105,6 +107,11 @@
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/swiper-3.3.0.min.js"></script>
 <script src="js/vendor/vue.js"></script>
+<script>
+    $('#vote_button').click(function(event) {
+        $('#submit_button').click();
+    });
+</script>
 </body>
 
 </html>
