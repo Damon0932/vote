@@ -105,9 +105,10 @@
 </div>
 <script src="js/vendor/jquery-2.1.4.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
-{{-- <script src="js/vendor/swiper-3.3.0.min.js"></script> --}}
 <script src="js/vendor/vue.js"></script>
 <script>
+
+
 new Vue({
     el: 'body',
     data: {
