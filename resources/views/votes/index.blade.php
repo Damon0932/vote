@@ -42,7 +42,7 @@
                 <p>Now's your chance to participate in designing upcoming Allegra K collections. Complete the questionnaire to WIN an Allegra K outfit for FREE!</p>
                 <br>
                 <div class="col-xs-0 col-md-1"></div>
-                <button class="button button-uppercase button-border col-md-4 col-xs-5">q &amp; a</button>
+                <a class="button button-uppercase button-border col-md-4 col-xs-5" href="/result">result</a>
                 <div class="col-xs-2"></div>
                 <button type="button" id='vote_button' class="button button-uppercase button-caution col-md-4 col-xs-5">vote now</button>
             </div>
