@@ -57,27 +57,27 @@
             <div class="thumbnail">
                 <img style="display: block;" :src="item.img_url">
 
-                <div class="caption">
+                <div class="caption"  v-for="question in questions">
                     <p>
-                        <span>Question:</span>@{{{ item.question }}}
+                        <span>Question@{{ $index }}:</span>@{{{ question.question }}}
                     </p>
 
-                    <p>
+                    <p v-if=" question.type == 'select'">
                             <span>Answer: <span class="text-danger">*</span>
                             <span class="star">
-                                <i class="fa fa-star" :class=" item.answer >= 1 ? 'choose':''" @click="star($index,1)"></i><i class="fa fa-star" :class=" item.answer >= 2 ? 'choose':''" @click="star($index,2)"></i><i class="fa fa-star" :class=" item.answer >= 3 ? 'choose':''" @click="star($index,3)"></i><i class="fa fa-star" :class=" item.answer >= 4 ? 'choose':''" @click="star($index,4)"></i><i class="fa fa-star" :class=" item.answer >= 5 ? 'choose':''" @click="star($index,5)"></i>
+                                <i class="fa fa-star" :class=" question.answer >= 1 ? 'choose':''" @click="star(question,1)"></i><i class="fa fa-star" :class=" question.answer >= 2 ? 'choose':''" @click="star(question,2)"></i><i class="fa fa-star" :class=" question.answer >= 3 ? 'choose':''" @click="star(question,3)"></i><i class="fa fa-star" :class=" question.answer >= 4 ? 'choose':''" @click="star(question,4)"></i><i class="fa fa-star" :class=" question.answer >= 5 ? 'choose':''" @click="star(question,5)"></i>
                             </span>
-                            <span v-show="item.answer == 0" class="label label-default">Not Rated</span>
-                            <span v-show="item.answer == 1" class="label label-danger">Very Unlikely</span>
-                            <span v-show="item.answer == 2" class="label label-warning">Unlikely</span>
-                            <span v-show="item.answer == 3" class="label label-info">Maybe</span>
-                            <span v-show="item.answer == 4" class="label label-primary">Likely</span>
-                            <span v-show="item.answer == 5" class="label label-success">Very Likely</span>
+                            <span v-show="question.answer == '' " class="label label-default">Not Rated</span>
+                            <span v-show="question.answer == 1" class="label label-danger">Very Unlikely</span>
+                            <span v-show="question.answer == 2" class="label label-warning">Unlikely</span>
+                            <span v-show="question.answer == 3" class="label label-info">Maybe</span>
+                            <span v-show="question.answer == 4" class="label label-primary">Likely</span>
+                            <span v-show="question.answer == 5" class="label label-success">Very Likely</span>
                             </span>
                     </p>
 
-                    <div class="form-group" style="margin-top: 10px;">
-                        <textarea rows="2" class="form-control" placeholder="Leave a comment. (Optional)" v-model="item.comment"></textarea>
+                    <div class="form-group" style="margin-top: 10px;" v-if=" question.type == 'comment'">
+                        <textarea rows="2" class="form-control" placeholder="Leave a comment. (Optional)" v-model="question.answer"></textarea>
                     </div>
                 </div>
             </div>
