@@ -16,13 +16,12 @@
 <div class="container">
     <div class="page-header">
         <h1>Result
-            <small>&emsp;demo</small>
+            <small>&emsp;vote</small>
         </h1>
     </div>
     <div class="panel panel-default">
-        <div class="panel-heading">123123</div>
+        <div class="panel-heading">投票结果</div>
         <table class="table table-striped table-bordered table-hover">
-            <th>
             <th>邮箱</th>
             <th>问题</th>
             <th>分数</th>
@@ -39,8 +38,8 @@
                 </tr>
             @endforeach
         </table>
-        {{ $results->render() }}
     </div>
+    {{ $results->render() }}
 </div>
 
 
