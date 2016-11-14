@@ -1,7 +1,7 @@
 var vm = new Vue({
     el: 'body',
     data: {
-        vote: data;
+        vote: data,
     },
     methods: {
         star: function(index, value) {
