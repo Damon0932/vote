@@ -4,7 +4,7 @@ var vm = new Vue({
         vote: data,
     },
     methods: {
-        star: function(question,value) {
+        star: function(question, value) {
             question.answer = value;
         },
         submit_vote: function() {
@@ -21,14 +21,14 @@ var vm = new Vue({
     computed: {
         vote_count: function() {
             var i = 0;
-            var select = false;
             for (item in this.vote) {
+                var select = true;
                 for (answer in this.vote[item].questions) {
-                    if (answer.answer == '' && answer.type == 'select') {
-                        select = true;
+                    if (this.vote[item].questions[answer].answer == '' && this.vote[item].questions[answer].type == 'select') {
+                        select = false;
                     }
                 }
-                if(select){
+                if (select) {
                     i++;
                 }
             }
