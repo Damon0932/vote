@@ -109,11 +109,11 @@
         </div>
     </div>
 </footer>
-<div class="copy-info">
+{{-- <div class="copy-info">
     <div class="container">
         <p>2016 Copyright © 123@123 Co. Ltd. All Rights Reserved.</p>
     </div>
-</div>
+</div> --}}
 
 <script type="text/javascript">
     var data = {!! $products !!}

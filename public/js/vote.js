@@ -10,8 +10,9 @@ var vm = new Vue({
         submit_vote: function(){
             if( this.vote_count == this.vote.length){
                 $.post(window.location.href, {answer:this.vote}, function(data){
-                    if(data){
-
+                    if(data.success){
+                        alert('投票成功!');
+                        window.location.href='/';
                     }
                 })
             }
