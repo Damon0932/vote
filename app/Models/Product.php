@@ -34,4 +34,24 @@ class Product extends Model
     {
         return $this->hasMany(Vote::class);
     }
+
+
+    /**
+     * @var array
+     */
+    protected $appends = ['answer', 'comment'];
+
+    /**
+     * @return mixed
+     */
+    public function getAnswerAttribute() {
+        return 0;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommentAttribute() {
+        return '';
+    }
 }
