@@ -50,7 +50,7 @@ class VoteController extends Controller
         $answers = $request->input('answer');
         foreach ($answers as $answer) {
             $data = [
-                'product_id' => $answer['product_id'],
+                'product_id' => $answer['id'],
                 'answer' => $answer['answer'],
                 'comment' => $answer['comment'],
                 'email' => $email
