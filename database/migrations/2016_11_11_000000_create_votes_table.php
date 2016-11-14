@@ -16,7 +16,7 @@ class CreateVotesTable extends Migration
             $table->increments('id');
             $table->string('img_url');
             $table->string('name');
-            $table->string('question');
+            $table->string('category');
             $table->timestamps();
         });
 
