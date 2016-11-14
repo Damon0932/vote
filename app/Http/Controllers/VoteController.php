@@ -82,8 +82,8 @@ class VoteController extends Controller
                 'img_url' => $disk->downloadUrl($file),
                 'question' => '请对上图商品进行打分'
             ];
-            Vote::create($data);
+            Product::create($data);
         }
-        dd(Vote::all());
+        dd(Product::all());
     }
 }
