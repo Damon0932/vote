@@ -101,4 +101,9 @@ class VoteController extends Controller
         }
         dd(Product::all()->toArray());
     }
+
+    public function data()
+    {
+        dd(Product::all()->toArray());
+    }
 }
