@@ -21,22 +21,32 @@ class VoteController extends Controller
         return view('votes.index');
     }
 
+
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function votePage()
+    public function votePage(Request $request)
     {
-        return view('votes.vote');
+        if ($request->has('email') && $request->input('email')) {
+            return view('votes.vote', [
+                'email' => $request->input('email')
+            ]);
+        } else {
+            return view('votes.index');
+        }
+
     }
 
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function vote(Request $request)
     {
         $email = $request->input('email');
-        $answers= $request->input('answer');
-        foreach($answers as $answer) {
+        $answers = $request->input('answer');
+        foreach ($answers as $answer) {
             $dataArray = explode('-', $answer);
             $data = [
                 'product_id' => $dataArray[0],
