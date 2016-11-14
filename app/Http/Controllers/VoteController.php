@@ -49,11 +49,10 @@ class VoteController extends Controller
         $email = $request->input('email');
         $answers = $request->input('answer');
         foreach ($answers as $answer) {
-            $dataArray = explode('-', $answer);
             $data = [
-                'product_id' => $dataArray[0],
-                'answer' => $dataArray[1],
-                'comment' => $dataArray[2],
+                'product_id' => $answer['product_id'],
+                'answer' => $answer['answer'],
+                'comment' => $answer['comment'],
                 'email' => $email
             ];
             Vote::create($data);
