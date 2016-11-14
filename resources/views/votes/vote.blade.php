@@ -55,7 +55,7 @@
     <div class="row">
         <div class="col-lg-4 col-md-4" v-for="item in vote" track-by="$index">
             <div class="thumbnail">
-                <img style="display: block;" :src=" 'img/'+($index+1)+'.jpg'">
+                <img style="display: block;" :src="item.img_url">
 
                 <div class="caption">
                     <p>
