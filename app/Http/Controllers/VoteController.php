@@ -57,7 +57,9 @@ class VoteController extends Controller
             ];
             Vote::create($data);
         }
-        return view('votes.index');
+        return response()->json([
+            'success' => true
+        ]);
     }
 
 }
