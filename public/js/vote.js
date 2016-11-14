@@ -1,57 +1,7 @@
 var vm = new Vue({
     el: 'body',
     data: {
-        vote: [{
-            img_url: 'img/1.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/2.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/3.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/4.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/5.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/6.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/7.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/8.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/9.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }, {
-            img_url: 'img/10.jpg',
-            question: 'Would you buy this style at <b>$18?</b>',
-            answer: 0,
-            comment: ''
-        }],
+        vote: data;
     },
     methods: {
         star: function(index, value) {
