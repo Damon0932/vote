@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use itbdw\QiniuStorage\QiniuStorage;
 
 /**
  * Class VoteController
@@ -70,5 +71,19 @@ class VoteController extends Controller
         return view('votes.table', [
             'results' => Vote::paginate('20')
         ]);
+    }
+
+    public function test() {
+        $disk = QiniuStorage::disk('qiniu');
+        $files = $disk->allFiles('/');
+        foreach($files as $file) {
+            $data = [
+                'name' => $file,
+                'img_url' => $disk->downloadUrl($file),
+                'question' => '请对上图商品进行打分'
+            ];
+            Vote::create($data);
+        }
+        dd(Vote::all());
     }
 }

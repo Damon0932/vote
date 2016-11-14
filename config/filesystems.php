@@ -61,6 +61,13 @@ return [
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
+        'qiniu' => [
+            'driver' => 'qiniu',
+            'domain' => 'ogm4rwz08.bkt.clouddn.com', //你的七牛域名
+            'access_key' => 'EcJMOI5usngMeSp0FoM4iMv-yMrrgCGzbKVHHIDF', //AccessKey
+            'secret_key' => 'bUFM58FvKgLXGzvshVQ4CmSAP5JgnAWM8CfQW_px', //SecretKey
+            'bucket' => 'vote', //Bucket名字
+        ],
 
     ],
 

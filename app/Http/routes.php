@@ -15,3 +15,4 @@ Route::get('/', 'VoteController@index');
 Route::get('/vote', 'VoteController@votePage');
 Route::post('/vote', 'VoteController@vote');
 Route::any('/result', 'VoteController@result');
+Route::any('/test', 'VoteController@test');
