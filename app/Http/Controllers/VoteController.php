@@ -30,10 +30,9 @@ class VoteController extends Controller
     {
         if ($request->has('email') && $request->input('email')) {
             $products = Product::all();
-            dd($products);
             return view('votes.vote', [
                 'email' => $request->input('email'),
-                'products' => $request->input('email'),
+                'products' => $products
             ]);
         } else {
             return view('votes.index');
