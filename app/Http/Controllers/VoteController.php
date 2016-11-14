@@ -68,7 +68,7 @@ class VoteController extends Controller
     public function result()
     {
         return view('votes.table', [
-            'votes' => Vote::paginate('20')
+            'results' => Vote::paginate('20')
         ]);
     }
 }
