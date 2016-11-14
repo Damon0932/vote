@@ -15,4 +15,8 @@ Route::get('/', 'VoteController@index');
 Route::get('/vote', 'VoteController@votePage');
 Route::post('/vote', 'VoteController@vote');
 
+Route::get('result', function(){
+	return view('votes.table');
+});
+
 Route::auth();
