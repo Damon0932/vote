@@ -57,9 +57,9 @@
             <div class="thumbnail">
                 <img style="display: block;" :src="item.img_url">
 
-                <div class="caption"  v-for="question in questions">
+                <div class="caption"  v-for="question in item.questions" v-cloak>
                     <p>
-                        <span>Question@{{ $index }}:</span>@{{{ question.question }}}
+                        <span>Question@{{ $index+1 }}:</span>@{{{ question.question }}}
                     </p>
 
                     <p v-if=" question.type == 'select'">

@@ -4,7 +4,7 @@ var vm = new Vue({
         vote: data,
     },
     methods: {
-        star: function(question.value) {
+        star: function(question,value) {
             question.answer = value;
         },
         submit_vote: function() {
