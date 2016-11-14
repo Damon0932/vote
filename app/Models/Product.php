@@ -60,7 +60,8 @@ class Product extends Model
      */
     public function getQuestionsAttribute() {
         $questions = [
-            '如果这件衣服'.$this->attributes['price'].'元一件(套），请问您愿意买这件衣服吗？',
+            //'如果这件衣服'.$this->attributes['price'].'元一件(套），请问您愿意买这件衣服吗？',
+            '如果这件衣服'.rand(1000, 10).'元一件(套），请问您愿意买这件衣服吗？',
             '请问您对这款衣服的款式评价如何？',
             '请问您对这款衣服的颜色评价如何？',
             '对于这款衣服，您觉得哪里最能打动你？（选填）？',
