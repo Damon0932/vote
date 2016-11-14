@@ -48,15 +48,18 @@ class VoteController extends Controller
     public function vote(Request $request)
     {
         $email = $request->input('email');
-        $answers = $request->input('answer');
-        foreach ($answers as $answer) {
-            $data = [
-                'product_id' => $answer['id'],
-                'answer' => $answer['answer'],
-                'comment' => $answer['comment'],
-                'email' => $email
-            ];
-            Vote::create($data);
+        $votes = $request->input('$votes');
+        foreach ($votes as $vote) {
+            foreach ($vote as $question => $answer) {
+                $data = [
+                    'product_id' => $vote['id'],
+                    'questions' => $question,
+                    'answer' => $answer,
+                    'comment' => $vote['comment'],
+                    'email' => $email
+                ];
+                Vote::create($data);
+            }
         }
         return response()->json([
             'success' => true
@@ -73,14 +76,14 @@ class VoteController extends Controller
         ]);
     }
 
-    public function test() {
+    public function test()
+    {
         $disk = QiniuStorage::disk('qiniu');
         $files = $disk->allFiles('/');
-        foreach($files as $file) {
+        foreach ($files as $file) {
             $data = [
                 'name' => $file,
-                'img_url' => $disk->downloadUrl($file),
-                'question' => '请对上图商品进行打分'
+                'img_url' => $disk->downloadUrl($file)
             ];
             Product::create($data);
         }
