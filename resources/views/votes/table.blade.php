@@ -39,7 +39,7 @@
                 </tr>
             @endforeach
         </table>
-        {{ $products->render() }}
+        {{ $results->render() }}
     </div>
 </div>
 
