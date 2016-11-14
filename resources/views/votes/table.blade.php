@@ -13,40 +13,39 @@
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
     <div class="page-header">
-        <h1>Result<small>&emsp;demo</small></h1>
+        <h1>Result
+            <small>&emsp;demo</small>
+        </h1>
     </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">123123</div>
-            <table class="table table-striped table-bordered table-hover">
+    <div class="panel panel-default">
+        <div class="panel-heading">123123</div>
+        <table class="table table-striped table-bordered table-hover">
+            <th>
+            <th>邮箱</th>
+            <th>问题</th>
+            <th>分数</th>
+            <th>留言</th>
+            <th>时间</th>
+            </th>
+            @foreach($results as $result)
                 <tr>
-                    <th>123</th>
-                    <th>123</th>
-                    <th>123</th>
+                    <td>{{$result->email}}</td>
+                    <td>{{$result->question}}</td>
+                    <td>{{$result->answer}}</td>
+                    <td>{{$result->comment}}</td>
+                    <td>{{$result->created_at}}</td>
                 </tr>
-                <tr>
-                    <td>123</td>
-                    <td>123</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>123</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>123</td>
-                    <td>123</td>
-                </tr>
-            </table>
-        </div>
+            @endforeach
+        </table>
+        {{ $products->render() }}
     </div>
-    
+</div>
 
-    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
 </body>
 
 </html>

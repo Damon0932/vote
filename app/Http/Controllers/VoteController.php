@@ -62,4 +62,13 @@ class VoteController extends Controller
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function result()
+    {
+        return view('votes.table', [
+            'votes' => Vote::paginate('20')
+        ]);
+    }
 }
