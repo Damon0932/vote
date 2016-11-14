@@ -87,6 +87,6 @@ class VoteController extends Controller
             ];
             Product::create($data);
         }
-        dd(Product::all());
+        dd(Product::all()->toArray());
     }
 }
