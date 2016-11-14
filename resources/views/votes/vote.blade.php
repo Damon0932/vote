@@ -114,6 +114,10 @@
         <p>2016 Copyright © 123@123 Co. Ltd. All Rights Reserved.</p>
     </div>
 </div>
+
+<script type="text/javascript">
+    var data = {{$products}}
+</script>
 <script src="js/vendor/jquery-2.1.4.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/vue.js"></script>
