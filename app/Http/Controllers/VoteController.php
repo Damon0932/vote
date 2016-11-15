@@ -70,7 +70,14 @@ class VoteController extends Controller
     public function result()
     {
         return view('votes.table', [
-            'results' => Vote::paginate('20')
+            'results' => Vote::paginate('20'),
+            'answer' => [
+                '非常不好',
+                '不好',
+                '一般',
+                '好',
+                '非常好'
+            ]
         ]);
     }
 
