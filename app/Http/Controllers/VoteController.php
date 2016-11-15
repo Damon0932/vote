@@ -54,7 +54,6 @@ class VoteController extends Controller
                     'product_id' => $vote['id'],
                     'question' => $question['question'],
                     'answer' => $question['answer'],
-                    'comment' => $vote['comment'],
                     'email' => $email
                 ];
                 Vote::create($data);

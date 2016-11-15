@@ -22,18 +22,16 @@
     <div class="panel panel-default">
         <div class="panel-heading">投票结果</div>
         <table class="table table-striped table-bordered table-hover">
-            <th>邮箱</th>
-            <th>问题</th>
-            <th>分数</th>
-            <th>留言</th>
-            <th>时间</th>
+            <th>Eamil</th>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Time</th>
             </th>
             @foreach($results as $result)
                 <tr>
                     <td>{{$result->email}}</td>
                     <td>{{$result->product->question}}</td>
                     <td>{{$result->answer}}</td>
-                    <td>{{$result->comment}}</td>
                     <td>{{$result->created_at}}</td>
                 </tr>
             @endforeach
