@@ -54,7 +54,7 @@
                 <img src="img/index_bra.jpg" alt="">
             </div>
             <div class="col-md-8">
-                <h2 style="font-weight: lighter;" class="underline">GOTHIC CHIC
+                <h2 style="font-weight: lighter;" class="underline">文胸
                         <span style="font-size: 40%;font-weight: lighter;border-radius: 0;vertical-align: text-top;background-color: #45B6AF;" class="label label-success">
                         IN PROGRESS
                         </span>
@@ -81,7 +81,7 @@
                 <img src="img/6203467.JPG" alt="">
             </div>
             <div class="col-md-8">
-                <h2 style="font-weight: lighter;" class="underline">GOTHIC CHIC
+                <h2 style="font-weight: lighter;" class="underline">家居服
                         <span style="font-size: 40%;font-weight: lighter;border-radius: 0;vertical-align: text-top;background-color: #45B6AF;" class="label label-success">
                         IN PROGRESS
                         </span>
