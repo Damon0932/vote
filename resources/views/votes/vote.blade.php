@@ -37,7 +37,8 @@
                 <b>@{{ vote.length }}</b> styles.
             </div>
         </div>
-        <button type="button"  @click='submit_vote' class="button button-caution button-uppercase" id='submit_vote'>submit</button>
+        <button type="button" @click='submit_vote' class="button button-caution button-uppercase" id='submit_vote'>
+        submit</button>
     </div>
 </div>
 <div class="container" style="min-height: 800px;">
@@ -57,7 +58,7 @@
             <div class="thumbnail">
                 <img style="display: block;" :src="item.img_url">
 
-                <div class="caption"  v-for="question in item.questions" v-cloak>
+                <div class="caption" v-for="question in item.questions" v-cloak>
                     <p>
                         <span>Question@{{ $index+1 }}:</span>@{{{ question.question }}}
                     </p>
@@ -65,19 +66,24 @@
                     <p v-if=" question.type == 'select'">
                             <span>Answer: <span class="text-danger">*</span>
                             <span class="star">
-                                <i class="fa fa-star" :class=" question.answer >= 1 ? 'choose':''" @click="star(question,1)"></i><i class="fa fa-star" :class=" question.answer >= 2 ? 'choose':''" @click="star(question,2)"></i><i class="fa fa-star" :class=" question.answer >= 3 ? 'choose':''" @click="star(question,3)"></i><i class="fa fa-star" :class=" question.answer >= 4 ? 'choose':''" @click="star(question,4)"></i><i class="fa fa-star" :class=" question.answer >= 5 ? 'choose':''" @click="star(question,5)"></i>
+                                <i class="fa fa-star" :class=" question.answer >= 1 ? 'choose':''" @click="star(question,1)"></i>
+                                <i class="fa fa-star" :class=" question.answer >= 2 ? 'choose':''" @click="star(question,2)"></i>
+                                <i class="fa fa-star" :class=" question.answer >= 3 ? 'choose':''" @click="star(question,3)"></i>
+                                <i class="fa fa-star" :class=" question.answer >= 4 ? 'choose':''" @click="star(question,4)"></i>
+                                <i class="fa fa-star" :class=" question.answer >= 5 ? 'choose':''" @click="star(question,5)"></i>
                             </span>
-                            <span v-show="question.answer == '' " class="label label-default">Not Rated</span>
-                            <span v-show="question.answer == 1" class="label label-danger">Very Unlikely</span>
-                            <span v-show="question.answer == 2" class="label label-warning">Unlikely</span>
-                            <span v-show="question.answer == 3" class="label label-info">Maybe</span>
-                            <span v-show="question.answer == 4" class="label label-primary">Likely</span>
-                            <span v-show="question.answer == 5" class="label label-success">Very Likely</span>
+                            <span v-show="question.answer == '' " class="label label-default">未选择</span>
+                            <span v-show="question.answer == 1" class="label label-danger">非常不好</span>
+                            <span v-show="question.answer == 2" class="label label-warning">不好</span>
+                            <span v-show="question.answer == 3" class="label label-info">一般</span>
+                            <span v-show="question.answer == 4" class="label label-primary">好</span>
+                            <span v-show="question.answer == 5" class="label label-success">非常好</span>
                             </span>
                     </p>
 
                     <div class="form-group" style="margin-top: 10px;" v-if=" question.type == 'comment'">
-                        <textarea rows="2" class="form-control" placeholder="Leave a comment. (Optional)" v-model="question.answer"></textarea>
+                        <textarea rows="2" class="form-control" placeholder="Leave a comment. (Optional)"
+                                  v-model="question.answer"></textarea>
                     </div>
                 </div>
             </div>
