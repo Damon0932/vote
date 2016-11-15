@@ -49,11 +49,11 @@ class VoteController extends Controller
         $email = $request->input('email');
         $votes = $request->input('votes');
         foreach ($votes as $vote) {
-            foreach ($vote as $question => $answer) {
+            foreach ($vote['questions'] as $question) {
                 $data = [
                     'product_id' => $vote['id'],
-                    'questions' => $question,
-                    'answer' => $answer,
+                    'question' => $question['question'],
+                    'answer' => $question['answer'],
                     'comment' => $vote['comment'],
                     'email' => $email
                 ];

@@ -22,6 +22,7 @@ class CreateVotesTable extends Migration
 
         Schema::create('votes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('question')->nullable();
             $table->string('answer');
             $table->string('comment')->nullable();
             $table->string('email');
