@@ -34,7 +34,7 @@
     <div class="col-lg-12 light-block">
         <div class="row">
             <div class="col-md-5">
-                <img src="img/01.png" alt="">
+                <img src="img/banner.jpg" alt="">
             </div>
             <div class="col-md-7">
                 <h2 style="font-weight: bold;">YOUR OUTFITS</h2>
@@ -51,7 +51,7 @@
     <div class="col-lg-12 light-block">
         <div class="row">
             <div class="col-lg-4 col-md-5 ">
-                <img src="img/02.png" alt="">
+                <img src="img/index_bra.jpg" alt="">
             </div>
             <div class="col-md-8">
                 <h2 style="font-weight: lighter;" class="underline">GOTHIC CHIC
@@ -78,7 +78,7 @@
     <div class="col-lg-12 light-block">
         <div class="row">
             <div class="col-lg-4 col-md-5 ">
-                <img src="img/02.png" alt="">
+                <img src="img/6203467.JPG" alt="">
             </div>
             <div class="col-md-8">
                 <h2 style="font-weight: lighter;" class="underline">GOTHIC CHIC

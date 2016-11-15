@@ -29,8 +29,8 @@ class VoteController extends Controller
      */
     public function votePage(Request $request)
     {
-        if ($request->has('email') && $request->input('email')) {
-            $products = Product::all();
+        if ($request->has('email') && $request->has('category') && $request->input('email') && $request->input('category')) {
+            $products = Product::where('category', $request->get('category'))->get();
             return view('votes.vote', [
                 'email' => $request->input('email'),
                 'products' => $products
@@ -38,7 +38,6 @@ class VoteController extends Controller
         } else {
             return view('votes.index');
         }
-
     }
 
     /**
@@ -48,7 +47,7 @@ class VoteController extends Controller
     public function vote(Request $request)
     {
         $email = $request->input('email');
-        $votes = $request->input('$votes');
+        $votes = $request->input('votes');
         foreach ($votes as $vote) {
             foreach ($vote as $question => $answer) {
                 $data = [
