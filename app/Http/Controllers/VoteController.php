@@ -51,10 +51,11 @@ class VoteController extends Controller
         foreach ($votes as $vote) {
             foreach ($vote['questions'] as $question) {
                 $data = [
+                    'email' => $email,
                     'product_id' => $vote['id'],
                     'question' => $question['question'],
                     'answer' => $question['answer'],
-                    'email' => $email
+                    'type' => $question['type']
                 ];
                 Vote::create($data);
             }

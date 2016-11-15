@@ -27,6 +27,7 @@ class Vote extends Model
         'email',
         'product_id',
         'question',
+        'type'
     ];
 
     /**
