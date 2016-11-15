@@ -30,7 +30,7 @@
             @foreach($results as $result)
                 <tr>
                     <td>{{$result->email}}</td>
-                    <td>{{$result->product->question}}</td>
+                    <td>{{$result->question}}</td>
                     <td>{{$result->answer}}</td>
                     <td>{{$result->created_at}}</td>
                 </tr>
