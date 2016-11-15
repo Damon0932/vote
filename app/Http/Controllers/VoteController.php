@@ -75,7 +75,7 @@ class VoteController extends Controller
         ]);
     }
 
-    public function test()
+    public function createProducts()
     {
         $disk = QiniuStorage::disk('qiniu');
         $files = $disk->allFiles('/家居服');
