@@ -60,7 +60,34 @@
                         </span>
                 </h2>
                 <p>Please fill in your email and start voting.</p>
-                <form action="#" @submit.prevent="submit_vote" method="post" id="index_form">
+                <form action="#" @submit.prevent="submit_vote('文胸')" method="post" id="index_form">
+                <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                    <input required type="email" v-model="email" name="email" placeholder="email@example.com" id="email" class="form-control" title="Please enter your email address.">
+                </div>
+                <br>
+                <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <button id="submit_button" type="submit" class="button button-uppercase button-caution col-xs-12">vote now</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 light-block">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 ">
+                <img src="img/02.png" alt="">
+            </div>
+            <div class="col-md-8">
+                <h2 style="font-weight: lighter;" class="underline">GOTHIC CHIC
+                        <span style="font-size: 40%;font-weight: lighter;border-radius: 0;vertical-align: text-top;background-color: #45B6AF;" class="label label-success">
+                        IN PROGRESS
+                        </span>
+                </h2>
+                <p>Please fill in your email and start voting.</p>
+                <form action="#" @submit.prevent="submit_vote('家居服')" method="post" id="index_form">
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
                         <span class="input-group-addon">
                             <i class="fa fa-envelope"></i>
@@ -115,8 +142,8 @@ new Vue({
         email: '',
     },
     methods: {
-        submit_vote: function(){
-            window.location.href='/vote?email='+this.email;
+        submit_vote: function(e){
+            window.location.href='/vote?email='+this.email+'&category='+e;
         }
     }
 });
