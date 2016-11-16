@@ -62,29 +62,30 @@
             </div>
         </div>
     </div>
-    <script src="js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/vue.js"></script>
-    <script>
+</div>
+<script src="js/vendor/jquery-2.1.4.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/vue.js"></script>
+<script>
 
 
-        new Vue({
-            el: 'body',
-            data: {
-                email: '',
-            },
-            methods: {
-                submit_vote: function (e) {
-                    window.location.href = '/vote?email=' + this.email + '&category=' + e;
-                }
+    new Vue({
+        el: 'body',
+        data: {
+            email: '',
+        },
+        methods: {
+            submit_vote: function (e) {
+                window.location.href = '/vote?email=' + this.email + '&category=' + e;
             }
-        });
+        }
+    });
 
 
-        $('#vote_button').click(function (event) {
-            $('#submit_button').click();
-        });
-    </script>
+    $('#vote_button').click(function (event) {
+        $('#submit_button').click();
+    });
+</script>
 </body>
 
 </html>
