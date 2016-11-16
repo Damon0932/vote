@@ -18,7 +18,7 @@
     <div class="container">
         <div class="media">
             <a class="media-left">
-                <img src="img/logo.png" alt="">
+                <img src="img/logo.jpg" alt="">
             </a>
 
             <div class="media-body">
