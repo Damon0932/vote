@@ -13,9 +13,9 @@
 
 Route::get('/', 'VoteController@index');
 Route::get('/vote', 'VoteController@votePage');
-Route::get('/bra', 'VoteController@braPage');
-Route::get('/flr', 'VoteController@flrPage');
-Route::get('/bdr', 'VoteController@bdrPage');
+Route::get('/bra', 'VoteController@braIndex');
+Route::get('/flr', 'VoteController@flrIndex');
+Route::get('/bdr', 'VoteController@bdrIndex');
 Route::post('/vote', 'VoteController@vote');
 Route::any('/result', 'VoteController@result');
 Route::any('/data', 'VoteController@data');
