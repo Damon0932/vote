@@ -76,6 +76,13 @@ class Product extends Model
                 'question' => '请问您对这款衣服的颜色评价如何？',
                 'type' => 'select',
                 'answer' => ''
+            ]
+        ];
+        if ($this->attributes['category'] == '文胸') {
+            array_push($questions, [
+                'question' => '请问您对这款文胸的功能评价如何？',
+                'type' => 'select',
+                'answer' => ''
             ], [
                 'question' => '对于这款衣服，您觉得哪里最能打动你？（选填）？',
                 'type' => 'comment',
@@ -84,18 +91,19 @@ class Product extends Model
                 'question' => '对于这款衣服，您举得哪里还不够好？（选填）',
                 'type' => 'comment',
                 'answer' => ''
-            ]
-        ];
-        if ($this->attributes['category'] == '文胸') {
-            array_push($questions, [
-                'question' => '请问您对这款文胸的功能评价如何？',
-                'type' => 'select',
-                'answer' => ''
             ]);
         } else {
             array_push($questions, [
                 'question' => '请问您对这款家居服的面料评价如何？',
                 'type' => 'select',
+                'answer' => ''
+            ], [
+                'question' => '对于这款衣服，您觉得哪里最能打动你？（选填）？',
+                'type' => 'comment',
+                'answer' => ''
+            ], [
+                'question' => '对于这款衣服，您举得哪里还不够好？（选填）',
+                'type' => 'comment',
                 'answer' => ''
             ]);
         }
