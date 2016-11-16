@@ -54,7 +54,7 @@
                     </p>
 
                     <p v-if=" question.type == 'select'">
-                            <span>答案: <span class="text-danger">*</span>
+                            <span>评分: <span class="text-danger">*</span>
                             <span class="star">
                                 <i class="fa fa-star" :class=" question.answer >= 1 ? 'choose':''" @click="star(question,1)"></i>
                                 <i class="fa fa-star" :class=" question.answer >= 2 ? 'choose':''" @click="star(question,2)"></i>
