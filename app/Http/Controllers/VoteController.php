@@ -29,15 +29,10 @@ class VoteController extends Controller
      */
     public function flrPage(Request $request)
     {
-        if ($request->has('email') && $request->input('email')) {
-            $products = Product::where('category', '法兰绒')->get();
-            return view('votes.flr', [
-                'email' => $request->input('email'),
-                'products' => $products
-            ]);
-        } else {
-            return view('votes.index');
-        }
+        $products = Product::where('category', '法兰绒')->get();
+        return view('votes.flr', [
+            'products' => $products
+        ]);
     }
 
     /**
@@ -46,15 +41,11 @@ class VoteController extends Controller
      */
     public function bdrPage(Request $request)
     {
-        if ($request->has('email') && $request->input('email')) {
-            $products = Product::where('category', '不倒绒')->get();
-            return view('votes.bdr', [
-                'email' => $request->input('email'),
-                'products' => $products
-            ]);
-        } else {
-            return view('votes.index');
-        }
+        $products = Product::where('category', '不倒绒')->get();
+        return view('votes.bdr', [
+            'products' => $products
+        ]);
+
     }
 
     /**
@@ -63,15 +54,10 @@ class VoteController extends Controller
      */
     public function braPage(Request $request)
     {
-        if ($request->has('email') && $request->input('email')) {
-            $products = Product::where('category', '文胸')->get();
-            return view('votes.bra', [
-                'email' => $request->input('email'),
-                'products' => $products
-            ]);
-        } else {
-            return view('votes.index');
-        }
+        $products = Product::where('category', '文胸')->get();
+        return view('votes.bra', [
+            'products' => $products
+        ]);
     }
 
     /**
