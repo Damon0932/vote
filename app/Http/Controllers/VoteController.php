@@ -31,12 +31,12 @@ class VoteController extends Controller
     {
         if ($request->has('email') && $request->input('email')) {
             $products = Product::where('category', '法兰绒')->get();
-            return view('votes.vote', [
+            return view('votes.flr', [
                 'email' => $request->input('email'),
                 'products' => $products
             ]);
         } else {
-            return view('flr.index');
+            return view('votes.index');
         }
     }
 
@@ -48,12 +48,12 @@ class VoteController extends Controller
     {
         if ($request->has('email') && $request->input('email')) {
             $products = Product::where('category', '不倒绒')->get();
-            return view('votes.vote', [
+            return view('votes.bdr', [
                 'email' => $request->input('email'),
                 'products' => $products
             ]);
         } else {
-            return view('bdr.index');
+            return view('votes.index');
         }
     }
 
@@ -65,12 +65,12 @@ class VoteController extends Controller
     {
         if ($request->has('email') && $request->input('email')) {
             $products = Product::where('category', '文胸')->get();
-            return view('votes.vote', [
+            return view('votes.bra', [
                 'email' => $request->input('email'),
                 'products' => $products
             ]);
         } else {
-            return view('bra.index');
+            return view('votes.index');
         }
     }
 
