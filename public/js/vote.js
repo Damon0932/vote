@@ -12,7 +12,7 @@ var vm = new Vue({
                 $.post(window.location.href, { votes: this.vote }, function(data) {
                     if (data.success) {
                         alert('投票成功!');
-                        window.location.href = '/';
+                        history.go(-1);
                     }
                 })
             }
