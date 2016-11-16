@@ -85,12 +85,23 @@ class VoteController extends Controller
     public function createProducts()
     {
         $disk = QiniuStorage::disk('qiniu');
-        $files = $disk->allFiles('/家居服');
+        $files = $disk->allFiles('/不倒绒');
         foreach ($files as $file) {
             $data = [
                 'name' => $file,
                 'img_url' => $disk->downloadUrl($file),
-                'category' => '家居服'
+                'category' => '不倒绒'
+            ];
+            Product::create($data);
+        }
+
+        $disk = QiniuStorage::disk('qiniu');
+        $files = $disk->allFiles('/法兰绒');
+        foreach ($files as $file) {
+            $data = [
+                'name' => $file,
+                'img_url' => $disk->downloadUrl($file),
+                'category' => '法兰绒'
             ];
             Product::create($data);
         }
