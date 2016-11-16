@@ -27,10 +27,44 @@ class VoteController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function votePage(Request $request)
+    public function flrPage(Request $request)
     {
-        if ($request->has('email') && $request->has('category') && $request->input('email') && $request->input('category')) {
-            $products = Product::where('category', $request->get('category'))->get();
+        if ($request->has('email') && $request->input('email')) {
+            $products = Product::where('category', '法兰绒')->get();
+            return view('votes.vote', [
+                'email' => $request->input('email'),
+                'products' => $products
+            ]);
+        } else {
+            return view('votes.index');
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function bdrPage(Request $request)
+    {
+        if ($request->has('email') && $request->input('email')) {
+            $products = Product::where('category', '不倒绒')->get();
+            return view('votes.vote', [
+                'email' => $request->input('email'),
+                'products' => $products
+            ]);
+        } else {
+            return view('votes.index');
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function braPage(Request $request)
+    {
+        if ($request->has('email') && $request->input('email')) {
+            $products = Product::where('category', '文胸')->get();
             return view('votes.vote', [
                 'email' => $request->input('email'),
                 'products' => $products
