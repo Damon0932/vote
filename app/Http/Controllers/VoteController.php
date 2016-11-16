@@ -14,6 +14,7 @@ use itbdw\QiniuStorage\QiniuStorage;
  */
 class VoteController extends Controller
 {
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -22,42 +23,48 @@ class VoteController extends Controller
         return view('votes.index');
     }
 
-
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function flrPage(Request $request)
+    public function votePage(Request $request)
     {
-        $products = Product::where('category', '法兰绒')->get();
-        return view('votes.flr', [
-            'products' => $products
-        ]);
+        if ($request->has('email') && $request->input('email')) {
+            $products = Product::all();
+            return view('votes.vote', [
+                'email' => $request->input('email'),
+                'products' => $products
+            ]);
+        } else {
+            return view('votes.index');
+        }
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function flrIndex()
+    {
+        return view('votes.flr');
     }
 
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function bdrPage(Request $request)
+    public function bdrIndex(Request $request)
     {
-        $products = Product::where('category', '不倒绒')->get();
-        return view('votes.bdr', [
-            'products' => $products
-        ]);
-
+        return view('votes.bdr');
     }
 
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function braPage(Request $request)
+    public function braIndex(Request $request)
     {
-        $products = Product::where('category', '文胸')->get();
-        return view('votes.bra', [
-            'products' => $products
-        ]);
+        return view('votes.bra');
     }
 
     /**
@@ -91,17 +98,13 @@ class VoteController extends Controller
     public function result()
     {
         return view('votes.table', [
-            'results' => Vote::paginate('20'),
-            'answer' => [
-                '非常不好',
-                '不好',
-                '一般',
-                '好',
-                '非常好'
-            ]
+            'results' => Vote::paginate('20')
         ]);
     }
 
+    /**
+     *
+     */
     public function createProducts()
     {
         $disk = QiniuStorage::disk('qiniu');
@@ -139,6 +142,9 @@ class VoteController extends Controller
         dd(Product::all()->toArray());
     }
 
+    /**
+     *
+     */
     public function data()
     {
         dd(Product::all()->toArray());
