@@ -36,7 +36,7 @@ class VoteController extends Controller
                 'products' => $products
             ]);
         } else {
-            return view('votes.index');
+            return view('flr.index');
         }
     }
 
@@ -53,7 +53,7 @@ class VoteController extends Controller
                 'products' => $products
             ]);
         } else {
-            return view('votes.index');
+            return view('bdr.index');
         }
     }
 
@@ -70,7 +70,7 @@ class VoteController extends Controller
                 'products' => $products
             ]);
         } else {
-            return view('votes.index');
+            return view('bra.index');
         }
     }
 
