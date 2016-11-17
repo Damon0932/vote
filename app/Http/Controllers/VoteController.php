@@ -73,13 +73,14 @@ class VoteController extends Controller
      */
     public function vote(Request $request)
     {
+        $info = $request->input('info');
         $voteData = [
             'phone' => $request->input('phone'),
-            'job' => $request->input('job'),
-            'age' => $request->input('age'),
-            'name' => $request->input('name'),
+            'job' => $info['job'],
+            'age' => $info['age'],
+            'name' => $info['name'],
             'voteQuestions' => [],
-            'voteDetails' => [],
+            'voteDetails' => []
         ];
 
 
