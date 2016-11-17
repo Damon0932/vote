@@ -78,6 +78,8 @@ class VoteController extends Controller
             'job' => $request->input('job'),
             'age' => $request->input('age'),
             'name' => $request->input('name'),
+            'voteQuestions' => [],
+            'voteDetails' => [],
         ];
 
 
