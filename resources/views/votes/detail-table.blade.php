@@ -24,7 +24,7 @@
         <table class="table table-striped table-bordered table-hover">
             <th>Question</th>
             <th>Answer</th>
-            @foreach($vote->voteDetails as $detail)
+            @foreach($voteDetails as $detail)
                 <tr>
                     <td>{{$result->question}}</td>
                     <td>{{$result->answer}}</td>

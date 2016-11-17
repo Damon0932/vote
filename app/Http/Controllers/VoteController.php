@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Vote;
+use App\Models\VoteDetail;
+use App\Models\VoteQuestion;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use itbdw\QiniuStorage\QiniuStorage;
@@ -78,11 +80,9 @@ class VoteController extends Controller
             'phone' => $request->input('phone'),
             'job' => $info['job'],
             'age' => $info['age'],
-            'name' => $info['name'],
-            'voteQuestions' => [],
-            'voteDetails' => []
+            'name' => $info['name']
         ];
-
+        $vote = Vote::create($voteData);
 
         $voteDetails = $request->input('votes');
         foreach ($voteDetails as $voteDetail) {
@@ -91,10 +91,10 @@ class VoteController extends Controller
                     'product_id' => $voteDetail['id'],
                     'question' => $question['question'],
                     'answer' => $question['answer'],
-                    'type' => $question['type']
+                    'type' => $question['type'],
+                    'vote_id' => $vote->id
                 ];
-                array_push($voteData['voteDetails'], $data);
-                //$vote->addVoteDetail($data);
+                VoteDetail::create($data);
             }
         }
 
@@ -103,12 +103,12 @@ class VoteController extends Controller
             $data = [
                 'question' => $question['question'],
                 'answer' => $question['answer'],
+                'vote_id' => $vote->id
             ];
-            //$vote->addVoteQuestion($data);
-            array_push($voteData['voteQuestions'], $data);
+            VoteQuestion::create($data);
         }
-        dd($voteData);
-        $vote = Vote::create($voteData);
+
+
         return response()->json([
             'success' => true
         ]);
@@ -119,8 +119,19 @@ class VoteController extends Controller
      */
     public function result()
     {
+
         return view('votes.table', [
-            'results' => Vote::paginate('20')
+            'votes' => Vote::paginate('20')
+        ]);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function voteDetail(Request $request)
+    {
+        return view('votes.detail-table', [
+            'voteDetails' => VoteDetail::where('vote_id', $request->input('vote_id'))->get()
         ]);
     }
 

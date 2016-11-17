@@ -106,7 +106,7 @@
           </div>
           <div class="form-group">
             <label for="age">年龄</label>
-            <input required type="number" class="form-control" id="age" placeholder="输入您的姓名" v-model="info.age">
+            <input required type="number" class="form-control" id="age" placeholder="输入您的年龄" v-model="info.age">
           </div>
           <div class="form-group">
             <label for="job">从事职业</label>

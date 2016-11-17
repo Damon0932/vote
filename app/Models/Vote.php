@@ -41,64 +41,6 @@ class Vote extends Model
      */
     public function voteQuestions()
     {
-        return $this->hasMany(VoteQuetion::class);
-    }
-
-    /**
-     * @param array $items
-     * @return $this
-     */
-    public function addVoteDetails($items)
-    {
-        foreach ($items as $item) {
-            $this->addVoteDetail($item);
-        }
-        return $this;
-    }
-
-    /**
-     * @param $data
-     * @return $this
-     */
-    public function addVoteDetail($data)
-    {
-        $this->voteDetails()->save(VoteDetail::create($data));
-        return $this;
-    }
-
-    /**
-     * @param $data
-     * @return $this
-     */
-    public function addVoteQuestion($data)
-    {
-        $this->voteQuestions()->save(VoteQuetion::create($data));
-        return $this;
-    }
-
-    /**
-     * @param array $items
-     * @return $this
-     */
-    public function addVoteQuestions($items)
-    {
-        foreach ($items as $item) {
-            $this->addVoteQuestion($item);
-        }
-        return $this;
-    }
-
-    public static function create(array $options = [])
-    {
-        $vote = parent::create($options);
-
-        if (array_key_exists('voteDetails', $options)) {
-            $vote = $vote->addVoteDetail($options['voteDetails']);
-        }
-        if (array_key_exists('voteQuestions', $options)) {
-            $voteQuestions = $options['voteQuestions'];
-            $vote->addVoteQuestion($voteQuestions);
-        }
-        return $vote;
+        return $this->hasMany(VoteQuestion::class);
     }
 }

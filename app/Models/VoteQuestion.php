@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  * @mixin \Eloquent
  */
-class VoteQuetion extends Model
+class VoteQuestion extends Model
 {
     /**
      * @var string

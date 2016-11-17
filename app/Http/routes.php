@@ -18,5 +18,6 @@ Route::get('/flr', 'VoteController@flrIndex');
 Route::get('/bdr', 'VoteController@bdrIndex');
 Route::post('/vote', 'VoteController@vote');
 Route::any('/result', 'VoteController@result');
+Route::any('/result/vote-detail', 'VoteController@voteDetails');
 Route::any('/data', 'VoteController@data');
 Route::any('/create-products', 'VoteController@createProducts');

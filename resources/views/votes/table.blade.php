@@ -28,6 +28,8 @@
             <th>从事工作</th>
             <th> a. 请问您喜欢这一系列衣服么？为什么？</th>
             <th>b. 对于GOSO的家居服（文胸）您会希望要什么类型的衣服呢？</th>
+            <th>投票时间</th>
+            <th>操作</th>
             </th>
             @foreach($votes as $vote)
                 <tr>
@@ -35,12 +37,16 @@
                     <td>{{$vote->name}}</td>
                     <td>{{$vote->age}}</td>
                     <td>{{$vote->job}}</td>
+                    @foreach($vote->voteQuestions as $question)
+                        <td>{{$question->answer}}</td>
+                    @endforeach
+                    <td><a href="/result/vote-detail?vote_id={{$vote->id}}">详情</a></td>
                     <td>{{$vote->created_at}}</td>
                 </tr>
             @endforeach
         </table>
     </div>
-    {{ $results->render() }}
+    {{ $votes->render() }}
 </div>
 
 
