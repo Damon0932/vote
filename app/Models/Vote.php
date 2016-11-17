@@ -45,6 +45,18 @@ class Vote extends Model
     }
 
     /**
+     * @param array $items
+     * @return $this
+     */
+    public function addVoteDetails($items)
+    {
+        foreach ($items as $item) {
+            $this->addVoteDetail($item);
+        }
+        return $this;
+    }
+
+    /**
      * @param $data
      * @return $this
      */
@@ -61,6 +73,18 @@ class Vote extends Model
     public function addVoteQuestion($data)
     {
         $this->voteQuestions()->save(VoteQuetion::create($data));
+        return $this;
+    }
+
+    /**
+     * @param array $items
+     * @return $this
+     */
+    public function addVoteQuestions($items)
+    {
+        foreach ($items as $item) {
+            $this->addVoteQuestion($item);
+        }
         return $this;
     }
 
