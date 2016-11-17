@@ -33,7 +33,7 @@
             <div class="col-lg-4 col-md-5 ">
                 <img src="img/不倒绒.jpg" alt="">
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-7">
                 <h2 style="font-weight: lighter;" class="underline">不倒绒
                         <span style="font-size: 40%;font-weight: lighter;border-radius: 0;vertical-align: text-top;background-color: #45B6AF;"
                               class="label label-success">
