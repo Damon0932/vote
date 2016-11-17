@@ -28,9 +28,8 @@
     </div>
 </div>
 <div class="container" style="min-height: 800px;">
+<br>
     <div class="col-lg-12 light-block">
-        <ol class="breadcrumb">
-        </ol>
         <div class="row">
             <div class="col-lg-4 col-md-5 ">
                 <img src="img/法兰绒.jpg" alt="">
@@ -48,10 +47,10 @@
                 <form action="#" @submit.prevent="submit_vote('法兰绒')" method="post" id="index_form">
                     <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
                         <span class="input-group-addon">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-mobile-phone"></i>
                         </span>
-                        <input required type="email" v-model="email" name="email" placeholder="email@example.com"
-                               id="email" class="form-control" title="Please enter your email address.">
+                        <input required type="number" v-model="phone" name="phone" placeholder="请输入手机号"
+                               id="phone" class="form-control" title="Please enter your email address.">
                     </div>
                     <br>
 
@@ -74,11 +73,11 @@
     new Vue({
         el: 'body',
         data: {
-            email: '',
+            phone: '',
         },
         methods: {
             submit_vote: function (e) {
-                window.location.href = '/vote?email=' + this.email + '&category=' + e;
+                window.location.href = '/vote?phone=' + this.phone + '&category=' + e;
             }
         }
     });
