@@ -63,9 +63,9 @@
                 <form action="#" @submit.prevent="submit_vote('文胸')" method="post" id="index_form">
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
                         <span class="input-group-addon">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-mobile-phone"></i>
                         </span>
-                    <input required type="email" v-model="email" name="email" placeholder="email@example.com" id="email" class="form-control" title="Please enter your email address.">
+                    <input required type="number" v-model="email" name="email" placeholder="请输入手机号" id="email" class="form-control" title="Please enter your email address.">
                 </div>
                 <br>
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
@@ -90,9 +90,9 @@
                 <form action="#" @submit.prevent="submit_vote('家居服')" method="post" id="index_form">
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
                         <span class="input-group-addon">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-mobile-phone"></i>
                         </span>
-                    <input required type="email" v-model="email" name="email" placeholder="email@example.com" id="email" class="form-control" title="Please enter your email address.">
+                    <input required type="number" v-model="email" name="email" placeholder="请输入手机号" id="email" class="form-control" title="Please enter your email address.">
                 </div>
                 <br>
                 <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
