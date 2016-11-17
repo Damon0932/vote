@@ -22,10 +22,12 @@
     <div class="panel panel-default">
         <div class="panel-heading">投票结果</div>
         <table class="table table-striped table-bordered table-hover">
+            <th>Prodcut</th>
             <th>Question</th>
             <th>Answer</th>
             @foreach($voteDetails as $detail)
                 <tr>
+                    <td><img src="{{$detail->product->img_url}}"></td>
                     <td>{{$detail->question}}</td>
                     <td>{{$detail->answer}}</td>
                 </tr>

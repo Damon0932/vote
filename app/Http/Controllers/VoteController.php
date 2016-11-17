@@ -131,7 +131,7 @@ class VoteController extends Controller
     public function voteDetails(Request $request)
     {
         return view('votes.detail-table', [
-            'voteDetails' => VoteDetail::where('vote_id', $request->input('vote_id'))->paginate('10'),
+            'voteDetails' => VoteDetail::where('vote_id', $request->input('vote_id'))->paginate('6'),
             'voteId' => $request->input('vote_id')
         ]);
     }
