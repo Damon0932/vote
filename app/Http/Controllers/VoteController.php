@@ -73,18 +73,26 @@ class VoteController extends Controller
      */
     public function vote(Request $request)
     {
-        $email = $request->input('email');
-        $votes = $request->input('votes');
-        foreach ($votes as $vote) {
-            foreach ($vote['questions'] as $question) {
+        $voteData = [
+            'phone' => $request->input('phone'),
+            'job' => $request->input('job'),
+            'age' => $request->input('age'),
+            'name' => $request->input('name'),
+        ];
+
+        $vote = Vote::create($voteData);
+
+        $voteDetails = $request->input('votes');
+
+        foreach ($voteDetails as $voteDetail) {
+            foreach ($voteDetail['questions'] as $question) {
                 $data = [
-                    'email' => $email,
                     'product_id' => $vote['id'],
                     'question' => $question['question'],
                     'answer' => $question['answer'],
                     'type' => $question['type']
                 ];
-                Vote::create($data);
+                $vote->addVoteDetail($data);
             }
         }
         return response()->json([

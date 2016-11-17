@@ -22,19 +22,23 @@ class Vote extends Model
      * @var array
      */
     protected $fillable = [
-        'answer',
-        'comment',
-        'email',
-        'product_id',
-        'question',
-        'type'
+        'name',
+        'phone',
+        'age',
+        'job'
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function product()
+    public function voteDetails()
     {
-        return $this->belongsTo(Product::class);
+        return $this->hasMany(VoteDetail::class);
+    }
+
+    public function addVoteDetail($data)
+    {
+        $this->voteDetails()->save(VoteDetail::create($data));
+        return $this;
     }
 }
