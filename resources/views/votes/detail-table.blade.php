@@ -22,20 +22,12 @@
     <div class="panel panel-default">
         <div class="panel-heading">投票结果</div>
         <table class="table table-striped table-bordered table-hover">
-            <th>电话</th>
-            <th>姓名</th>
-            <th>年纪</th>
-            <th>从事工作</th>
-            <th> a. 请问您喜欢这一系列衣服么？为什么？</th>
-            <th>b. 对于GOSO的家居服（文胸）您会希望要什么类型的衣服呢？</th>
-            </th>
-            @foreach($votes as $vote)
+            <th>Question</th>
+            <th>Answer</th>
+            @foreach($vote->voteDetails as $detail)
                 <tr>
-                    <td>{{$vote->phone}}</td>
-                    <td>{{$vote->name}}</td>
-                    <td>{{$vote->age}}</td>
-                    <td>{{$vote->job}}</td>
-                    <td>{{$vote->created_at}}</td>
+                    <td>{{$result->question}}</td>
+                    <td>{{$result->answer}}</td>
                 </tr>
             @endforeach
         </table>

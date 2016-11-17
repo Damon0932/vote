@@ -23,9 +23,9 @@ class CreateVotesTable extends Migration
         Schema::create('votes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('age')->nullable();
-            $table->string('job');
+            $table->string('job')->nullable();
             $table->timestamps();
         });
 
@@ -33,11 +33,24 @@ class CreateVotesTable extends Migration
             $table->increments('id');
 
             $table->string('question')->nullable();
-            $table->string('answer');
-            $table->string('type');
+            $table->string('answer')->nullable();
+            $table->string('type')->nullable();
 
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
+
+            $table->integer('vote_id')->unsigned();
+            $table->foreign('vote_id')->references('id')->on('votes');
+
+            $table->timestamps();
+        });
+
+        Schema::create('vote_questions', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('question')->nullable();
+            $table->string('answer')->nullable();
+            $table->string('type')->nullable();
 
             $table->integer('vote_id')->unsigned();
             $table->foreign('vote_id')->references('id')->on('votes');

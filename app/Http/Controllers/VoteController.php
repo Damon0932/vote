@@ -83,7 +83,6 @@ class VoteController extends Controller
         $vote = Vote::create($voteData);
 
         $voteDetails = $request->input('votes');
-
         foreach ($voteDetails as $voteDetail) {
             foreach ($voteDetail['questions'] as $question) {
                 $data = [
@@ -95,6 +94,16 @@ class VoteController extends Controller
                 $vote->addVoteDetail($data);
             }
         }
+
+        $voteQuestions = $request->input('questions');
+        foreach ($voteQuestions as $question) {
+            $data = [
+                'question' => $question['question'],
+                'answer' => $question['answer'],
+            ];
+            $vote->addVoteQuestion($data);
+        }
+
         return response()->json([
             'success' => true
         ]);

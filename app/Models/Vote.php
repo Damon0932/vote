@@ -36,9 +36,31 @@ class Vote extends Model
         return $this->hasMany(VoteDetail::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function voteQuestions()
+    {
+        return $this->hasMany(VoteQuetion::class);
+    }
+
+    /**
+     * @param $data
+     * @return $this
+     */
     public function addVoteDetail($data)
     {
         $this->voteDetails()->save(VoteDetail::create($data));
+        return $this;
+    }
+
+    /**
+     * @param $data
+     * @return $this
+     */
+    public function addVoteQuestion($data)
+    {
+        $this->voteQuestions()->save(VoteQuetion::create($data));
         return $this;
     }
 }
