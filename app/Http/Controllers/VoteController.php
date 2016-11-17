@@ -128,7 +128,7 @@ class VoteController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function voteDetail(Request $request)
+    public function voteDetails(Request $request)
     {
         return view('votes.detail-table', [
             'voteDetails' => VoteDetail::where('vote_id', $request->input('vote_id'))->get()
