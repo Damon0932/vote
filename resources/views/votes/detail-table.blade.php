@@ -8,7 +8,7 @@
     <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
     <title>Result</title>
 
-    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
 
 </head>
 
