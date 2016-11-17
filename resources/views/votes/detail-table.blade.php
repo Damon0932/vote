@@ -32,7 +32,7 @@
             @endforeach
         </table>
     </div>
-    {{ $voteDetails->render() }}
+    {{ $voteDetails->appends(['vote_id' => $voteId])->render() }}
 </div>
 
 
