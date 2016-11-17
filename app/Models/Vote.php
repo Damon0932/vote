@@ -63,4 +63,18 @@ class Vote extends Model
         $this->voteQuestions()->save(VoteQuetion::create($data));
         return $this;
     }
+
+    public static function create(array $options = [])
+    {
+        $vote = parent::create($options);
+
+        if (array_key_exists('voteDetails', $options)) {
+            $vote = $vote->addVoteDetail($options['voteDetails']);
+        }
+        if (array_key_exists('voteQuestions', $options)) {
+            $voteQuestions = $options['voteQuestions'];
+            $vote->addVoteQuestion($voteQuestions);
+        }
+        return $vote;
+    }
 }

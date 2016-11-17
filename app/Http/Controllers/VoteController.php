@@ -80,7 +80,6 @@ class VoteController extends Controller
             'name' => $request->input('name'),
         ];
 
-        $vote = Vote::create($voteData);
 
         $voteDetails = $request->input('votes');
         foreach ($voteDetails as $voteDetail) {
@@ -91,7 +90,8 @@ class VoteController extends Controller
                     'answer' => $question['answer'],
                     'type' => $question['type']
                 ];
-                $vote->addVoteDetail($data);
+                array_push($voteData['voteDetails'], $data);
+                //$vote->addVoteDetail($data);
             }
         }
 
@@ -101,9 +101,10 @@ class VoteController extends Controller
                 'question' => $question['question'],
                 'answer' => $question['answer'],
             ];
-            $vote->addVoteQuestion($data);
+            //$vote->addVoteQuestion($data);
+            array_push($voteData['voteQuestions'], $data);
         }
-
+        $vote = Vote::create($voteData);
         return response()->json([
             'success' => true
         ]);
