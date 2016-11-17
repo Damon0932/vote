@@ -26,13 +26,13 @@
             <th>Answer</th>
             @foreach($voteDetails as $detail)
                 <tr>
-                    <td>{{$result->question}}</td>
-                    <td>{{$result->answer}}</td>
+                    <td>{{$detail->question}}</td>
+                    <td>{{$detail->answer}}</td>
                 </tr>
             @endforeach
         </table>
     </div>
-    {{ $results->render() }}
+    {{ $voteDetails->render() }}
 </div>
 
 
