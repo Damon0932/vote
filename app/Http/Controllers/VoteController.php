@@ -29,10 +29,10 @@ class VoteController extends Controller
      */
     public function votePage(Request $request)
     {
-        if ($request->has('email') && $request->has('category') && $request->input('email') && $request->input('category')) {
+        if ($request->has('phone') && $request->has('category') && $request->input('phone') && $request->input('category')) {
             $products = Product::where('category', $request->get('category'))->get();
             return view('votes.vote', [
-                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
                 'products' => $products
             ]);
         } else {
