@@ -85,7 +85,7 @@ class VoteController extends Controller
         foreach ($voteDetails as $voteDetail) {
             foreach ($voteDetail['questions'] as $question) {
                 $data = [
-                    'product_id' => $vote['id'],
+                    'product_id' => $voteDetail['id'],
                     'question' => $question['question'],
                     'answer' => $question['answer'],
                     'type' => $question['type']
