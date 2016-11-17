@@ -42,6 +42,6 @@ class VoteDetail extends Model
      */
     public function vote()
     {
-        return $this->belongsTo(Vote::class);
+        return $this->belongsTo(Vote::class, 'vote_id');
     }
 }
