@@ -107,6 +107,7 @@ class VoteController extends Controller
             //$vote->addVoteQuestion($data);
             array_push($voteData['voteQuestions'], $data);
         }
+        dd($voteData);
         $vote = Vote::create($voteData);
         return response()->json([
             'success' => true
