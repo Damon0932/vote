@@ -42,7 +42,7 @@
                         </span>
                 </h2>
 
-                <p>请填写邮箱，然后点击“开始投票”按钮开始投票。</p>
+                <p>请填写手机号，然后点击“开始投票”按钮开始投票。</p>
 
                 <form action="#" @submit.prevent="submit_vote('法兰绒')" method="post" id="index_form">
                     <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
