@@ -50,7 +50,7 @@
                             <i class="fa fa-mobile-phone"></i>
                         </span>
                         <input required type="number" v-model="phone" name="phone" placeholder="请输入手机号"
-                               id="phone" class="form-control" title="Please enter your email address.">
+                               id="phone" class="form-control">
                     </div>
                     <br>
 
