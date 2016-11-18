@@ -69,18 +69,22 @@
 <script src="js/vendor/vue.js"></script>
 <script>
 
-
-    new Vue({
-        el: 'body',
-        data: {
-            phone: '',
-        },
-        methods: {
-            submit_vote: function (e) {
+new Vue({
+      el: 'body',
+      data: {
+          phone: '',
+      },
+      methods: {
+          submit_vote: function (e) {
+              var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+              if (!myreg.test(this.phone)) {
+                alert("请输入有效的手机号码！");
+              } else {                    
                 window.location.href = '/vote?phone=' + this.phone + '&category=' + e;
-            }
-        }
-    });
+              }
+          }
+      }
+  });
 
 
     $('#vote_button').click(function (event) {
