@@ -41,7 +41,7 @@
                         </span>
                 </h2>
 
-                <p>请填写邮箱，然后点击“开始投票”按钮开始投票。</p>
+                <p>请填写手机号，然后点击“开始投票”按钮开始投票。</p>
 
                 <form action="#" @submit.prevent="submit_vote('不倒绒')" method="post" id="index_form">
                     <div class="input-group col-lg-4 col-md-6 col-sm-12 col-xs-12 has-error">
@@ -49,7 +49,7 @@
                             <i class="fa fa-mobile-phone"></i>
                         </span>
                         <input required type="number" v-model="phone" name="phone" placeholder="请输入手机号"
-                               id="phone" class="form-control" title="Please enter your email address.">
+                               id="phone" class="form-control">
                     </div>
                     <br>
 
@@ -76,7 +76,12 @@
         },
         methods: {
             submit_vote: function (e) {
-                window.location.href = '/vote?phone=' + this.phone + '&category=' + e;
+                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                if (!myreg.test(this.phone)) {
+                  alert("请输入有效的手机号码！");
+                } else {                    
+                  window.location.href = '/vote?phone=' + this.phone + '&category=' + e;
+                }
             }
         }
     });

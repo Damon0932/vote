@@ -45,7 +45,7 @@ var vm = new Vue({
             for (item in this.vote) {
                 var select = true;
                 for (answer in this.vote[item].questions) {
-                    if (this.vote[item].questions[answer].answer == '' && this.vote[item].questions[answer].type == 'select') {
+                    if (this.vote[item].questions[answer].answer == '') {
                         select = false;
                     }
                 }

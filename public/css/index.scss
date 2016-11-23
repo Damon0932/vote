@@ -107,7 +107,7 @@ textarea {
         transition: all .25s ease-out;
     }
     i {
-        padding:0 3px;
+        padding: 0 3px;
         transition: all .25s ease-out;
     }
     .choose {
@@ -121,16 +121,15 @@ textarea {
     padding: 0;
     border: none;
     background-color: #f5f5f5;
-    box-shadow:  0 0 5px #48525e;
+    box-shadow: 0 0 5px #48525e;
     font-size: 20px;
     font-weight: 350;
     text-transform: uppercase;
-
     .word > div {
         float: left;
         padding: 10px 0;
     }
-    button{ 
+    button {
         font-weight: bold;
         font-size: 22px;
         float: right;
@@ -141,4 +140,8 @@ textarea {
 
 .disabled {
     background-color: #f28794!important;
+}
+
+.input-group-addon {
+    font-size: 18px;
 }
