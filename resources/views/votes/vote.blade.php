@@ -30,10 +30,9 @@
     <div class="container">
         <div class="word">
             <div>
-                你已经投了
                 <b>@{{ vote_count }}</b>
                 <b>/</b>
-                <b>@{{ vote.length }}</b> 票.
+                <b>@{{ vote.length }}</b>
             </div>
         </div>
         <button type="button" @click='show_modal' class="button button-caution button-uppercase" id='submit_vote'>
