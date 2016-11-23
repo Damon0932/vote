@@ -27,7 +27,7 @@
             <th>Answer</th>
             @foreach($voteDetails as $detail)
                 <tr>
-                    <td><img src="{{$detail->product->name}}"></td>
+                    <td>{{$detail->product->name}}></td>
                     <td>{{$detail->question}}</td>
                     <td>{{$detail->answer}}</td>
                 </tr>
