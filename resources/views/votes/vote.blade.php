@@ -36,7 +36,7 @@
             </div>
         </div>
         <button type="button" @click='show_modal' class="button button-caution button-uppercase" id='submit_vote'>
-        submit</button>
+        提交</button>
     </div>
 </div>
 <div class="container" style="min-height: 800px;">
@@ -82,56 +82,65 @@
 <br><br><br>
 
 <div class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">请您完成剩下的内容:</h4>
-      </div>
-      <div class="modal-body">
-        <form role="form" @submit.prevent="submit_vote">
-          <div class="form-group" v-for="question in questions">
-            <label for="@{{ 'question_' + $index }}">@{{ question.question }}</label>
-            <textarea required rows="3" type="text" class="form-control" id="@{{ 'question_' + $index }}" placeholder="" v-model="question.answer"></textarea> 
-          </div>
-          <hr>
-          <div class="form-group">
-            <label for="name">姓名</label>
-            <input required type="text" class="form-control" id="name" placeholder="输入您的姓名" v-model="info.name">
-          </div>
-          <div class="form-group">
-            <label for="phone">电话(GOSO会员登记手机)</label>
-            <input required type="number" class="form-control" id="phone" placeholder="输入您的电话" v-model="info.phone">
-          </div>
-          <div class="form-group">
-            <label for="age">年龄</label>
-            <input required type="number" class="form-control" id="age" placeholder="输入您的年龄" v-model="info.age">
-          </div>
-          <div class="form-group">
-            <label for="job">从事职业</label>
-            <select required class="form-control" id="job"  v-model="info.job">
-                <option value="学生">学生</option>
-                <option value="公务员">公务员</option>
-                <option value="家庭主妇">家庭主妇</option>
-                <option value="工厂职工">工厂职工</option>
-                <option value="服务/销售">服务/销售</option>
-                <option value="自由职业者">自由职业者</option>
-                <option value="其他">其他</option>
-            </select>
-          </div>
-          <div class="form-group"  v-if="info.job == '其他'">
-            <label for="job">请输入您的职业</label>
-            <input required type="text" class="form-control" id="job_other" placeholder="输入您的职业" v-model="info.job_other">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="submit" class="btn btn-primary">提交</button>
-          </div>
-        </form>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title">请您完成剩下的内容:</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" @submit.prevent="submit_vote">
+                    <div class="form-group" v-for="question in questions">
+                        <label for="@{{ 'question_' + $index }}">@{{ question.question }}</label>
+                        <textarea required rows="3" type="text" class="form-control" id="@{{ 'question_' + $index }}"
+                                  placeholder="" v-model="question.answer"></textarea>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input required type="text" class="form-control" id="name" placeholder="输入您的姓名"
+                               v-model="info.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">电话(GOSO会员登记手机)</label>
+                        <input required type="number" class="form-control" id="phone" placeholder="输入您的电话"
+                               v-model="info.phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input required type="number" class="form-control" id="age" placeholder="输入您的年龄"
+                               v-model="info.age">
+                    </div>
+                    <div class="form-group">
+                        <label for="job">从事职业</label>
+                        <select required class="form-control" id="job" v-model="info.job">
+                            <option value="学生">学生</option>
+                            <option value="公务员">公务员</option>
+                            <option value="家庭主妇">家庭主妇</option>
+                            <option value="工厂职工">工厂职工</option>
+                            <option value="服务/销售">服务/销售</option>
+                            <option value="自由职业者">自由职业者</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group" v-if="info.job == '其他'">
+                        <label for="job">请输入您的职业</label>
+                        <input required type="text" class="form-control" id="job_other" placeholder="输入您的职业"
+                               v-model="info.job_other">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <script type="text/javascript">
     var data = {!! $products !!}
