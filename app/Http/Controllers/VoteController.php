@@ -31,7 +31,7 @@ class VoteController extends Controller
      */
     public function votePage(Request $request)
     {
-        if( Vote::where('category', $request->input('category'))->count() <= 200) {
+        if( Vote::where('category', $request->input('category'))->count() < 200) {
             if ($request->has('phone') && $request->has('category') && $request->input('phone') && $request->input('category')) {
                 $products = Product::where('category', $request->get('category'))->get();
                 return view('votes.vote', [
