@@ -25,7 +25,8 @@ class Vote extends Model
         'name',
         'phone',
         'age',
-        'job'
+        'job',
+        'category'
     ];
 
     /**
