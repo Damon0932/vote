@@ -31,17 +31,20 @@ class VoteController extends Controller
      */
     public function votePage(Request $request)
     {
-        if ($request->has('phone') && $request->has('category') && $request->input('phone') && $request->input('category')) {
-            $products = Product::where('category', $request->get('category'))->get();
-            return view('votes.vote', [
-                'phone' => $request->input('phone'),
-                'products' => $products,
-                'category' => $request->input('category')
-            ]);
+        if( Vote::where('category', $request->input('category'))->count() >= 1) {
+            if ($request->has('phone') && $request->has('category') && $request->input('phone') && $request->input('category')) {
+                $products = Product::where('category', $request->get('category'))->get();
+                return view('votes.vote', [
+                    'phone' => $request->input('phone'),
+                    'products' => $products,
+                    'category' => $request->input('category')
+                ]);
+            } else {
+                return view('votes.index');
+            }
         } else {
-            return view('votes.index');
+            dd('本次调研已经圆满结束，敬请期待下一轮调研');
         }
-
     }
 
     /**
