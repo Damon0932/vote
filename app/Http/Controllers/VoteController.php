@@ -35,7 +35,8 @@ class VoteController extends Controller
             $products = Product::where('category', $request->get('category'))->get();
             return view('votes.vote', [
                 'phone' => $request->input('phone'),
-                'products' => $products
+                'products' => $products,
+                'category' => $request->input('category')
             ]);
         } else {
             return view('votes.index');
@@ -80,7 +81,8 @@ class VoteController extends Controller
             'phone' => $request->input('phone'),
             'job' => $info['job'],
             'age' => $info['age'],
-            'name' => $info['name']
+            'name' => $info['name'],
+            'category' => $request->input('category')
         ];
         $vote = Vote::create($voteData);
 

@@ -2,6 +2,7 @@ var vm = new Vue({
     el: 'body',
     data: {
         vote: data,
+        category: '',
         questions: [{
             question: 'a. 请问您喜欢这一系列衣服么? 为什么?',
             answer: ''
@@ -29,7 +30,8 @@ var vm = new Vue({
                 $.post(window.location.href, { 
                     votes: this.vote,
                     questions: this.questions,
-                    info: this.info
+                    info: this.info,
+                    category: this.category
                 }, function(data) {
                     if (data.success) {
                         alert('投票成功!');

@@ -91,6 +91,7 @@
             </div>
             <div class="modal-body">
                 <form role="form" @submit.prevent="submit_vote">
+                    <input type="hidden" name="category" value="{{$category}}" v-model="category">
                     <div class="form-group" v-for="question in questions">
                         <label for="@{{ 'question_' + $index }}">@{{ question.question }}</label>
                         <textarea required rows="3" type="text" class="form-control" id="@{{ 'question_' + $index }}"
