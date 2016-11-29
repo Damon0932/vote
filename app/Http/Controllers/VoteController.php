@@ -127,7 +127,7 @@ class VoteController extends Controller
 
         return view('votes.table', [
             'votes' => Vote::paginate('20'),
-            'brdCount' => Vote::where('category', '不倒绒')->count(),
+            'bdrCount' => Vote::where('category', '不倒绒')->count(),
             'braCount' => Vote::where('category', '文胸')->count(),
             'flrCount' => Vote::where('category', '法兰绒')->count()
         ]);
