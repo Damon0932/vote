@@ -16,7 +16,7 @@
 <div class="container">
     <div class="page-header">
         <h1>Result
-            <small>&emsp;vote</small>
+            <small>不倒绒：{{$bdrCount}}|法兰绒：{{$flrCount}}|文胸：{{$braCount}}</small>
         </h1>
     </div>
     <div class="panel panel-default">
